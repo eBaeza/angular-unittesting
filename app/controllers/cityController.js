@@ -1,46 +1,17 @@
-// city controller
-app.controller('CityController', function CityController($scope) {
+;(function() {
+	'use strict';
 
-	// cities array
-	$scope.cities = [
-		{
-			name: 'Ciudad de México',
-			branchs: [
-				{
-					name: 'Casa matriz',
-					tel: '53284791'
-				},
-				{
-					name: 'Suc. Arboledas',
-					tel: '55203418'
-				},
-				{
-					name: 'Coyoacán',
-					tel: '56872341'
-				}
-			]
-		},
-		{
-			name: 'Guadalajara, Jalisco',
-			branchs: [
-				{
-					name: 'Centro',
-					tel: '28437654'
-				},
-				{
-					name: 'Boulevard Norte',
-					tel: '28470092'
-				}
-			]
-		},
-		{
-			name: 'Mérida, Yucatán',
-			branchs: [
-				{
-					name: 'Paseo Montejo',
-					tel: '1293412'
-				}
-			]
-		}
-	];
-});
+	var app = angular.module('city.controller', []);
+
+	// city controller
+	app.controller('CityController', function CityController($scope, $http) {
+
+		// cities array
+		$scope.cities = null;
+
+		// se consume json
+		$http.get('data.json').success(function (data){
+			$scope.cities = data;
+		});
+	});
+}());

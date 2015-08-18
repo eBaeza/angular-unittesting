@@ -5,13 +5,13 @@ var livereload = require('gulp-livereload');
 var notify     = require('gulp-notify');
 
 gulp.task('html', function() {
-	gulp.src('index.html')
+	gulp.src('app/')
 	.pipe(livereload())
 	.pipe(notify({ message : 'modified HTML'}));
 });
 
 gulp.task('js', function() {
-	gulp.src('app/app.js')
+	gulp.src('app/')
 	.pipe(livereload())
 	.pipe(notify({ message : 'modified JS'}));
 });
@@ -19,7 +19,7 @@ gulp.task('js', function() {
 gulp.task('watch', function () {
 	livereload.listen();
 	gulp.watch('app/**/*.js', ['js']);
-	gulp.watch('**/*.html', ['html']);
+	gulp.watch('app/**/*.html', ['html']);
 });
 
 /**
