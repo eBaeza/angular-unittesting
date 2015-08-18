@@ -1,7 +1,7 @@
 ;(function() {
 	'use strict';
 
-	var app = angular.module('city.controller', []);
+	var app = angular.module('app.cityController', []);
 
 	// city controller
 	app.controller('CityController', function CityController($scope, $http) {
