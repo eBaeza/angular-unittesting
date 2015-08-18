@@ -1,0 +1,17 @@
+{
+  "name": "angular-unittesting",
+  "version": "1.0.0",
+  "description": "Unit Test AngularJS with Karma, Jasmine, Gulp",
+  "repository": "https://github.com/eBaeza/angular-unittesting",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-watch": "^4.3.4",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6"
+  }
+}
