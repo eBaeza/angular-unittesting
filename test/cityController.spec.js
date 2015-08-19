@@ -25,11 +25,11 @@
       httpBackend.flush();
     });
 
-    it("should have 3 cities", function () {
+    it("should have cities", function () {
       httpBackend.when('GET', 'data.json').respond([{}, {}, {}]); // mock backend definition
       var controller = createController();
       httpBackend.flush();
-      expect(scope.cities.length).toBe(3);
+      expect(scope.cities.length).toBeGreaterThan(0);
     });
   });
 }());
