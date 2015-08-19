@@ -1,16 +1,12 @@
 ;(function() {
 	'use strict';
 
-	var app = angular.module('app.cityController', []);
+	var app = angular.module('myApp', []);
 
 	// city controller
 	app.controller('CityController', function CityController($scope, $http) {
-
-		// cities array
-		$scope.cities = null;
-
-		// se consume json
-		$http.get('data.json').success(function (data){
+		// get data json
+		$http.get('data.json').success(function (data) {
 			$scope.cities = data;
 		});
 	});

@@ -2,5 +2,5 @@
 	'use strict';
 
 	// Init Angular Application
-	var app = angular.module('myApp', ['app.cityController']);
+	var app = angular.module('myApp', []);
 }());
