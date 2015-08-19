@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-<head>
-	<meta charset="UTF-8">
-	<title>Angular Unit Testing</title>
-</head>
-<body ng-controller="CityController">
-	<h1>AngularJS Unit Testing</h1>
-	
-	<select name="cities">
-		<option value="">-- Select a city --</option>
-		<option value="{{ city.name }}" ng-repeat="city in cities">{{ city.name }}</option>
-	</select>
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular Unit Testing</title>
+  </head>
+  <body ng-controller="CityController">
+    <h1>AngularJS Unit Testing</h1>
+    
+    <p>
+      <label for="">Select a city: </label>
+      <select name="cities"ng-model="selectedCity"
+        ng-options="city as city.name for city in cities">
+        <option value="">---Select a city---</option>
+      </select>
+    </p>
+    
+    <p ng-show="selectedCity">
+      <label for="">Select a branch:</label>
+      <select name="branchs" ng-model="selectedBranch"
+        ng-options="branch as branch.name for branch in selectedCity.branchs">
+        <option value="">---Select a branch---</option>
+      </select>
+    </p>
 
-	<script src="core/angular.min.js"></script>
-	<script src="app.js"></script>
-	<script src="controllers/cityController.js"></script>
-</body>
+    <div ng-show="selectedBranch">
+      <p><strong>Name branch: </strong> {{ selectedBranch.name }}</p>
+      <p><strong>Telephone branch: </strong> {{ selectedBranch.tel }}</p>
+    </div>
+
+    <script src="core/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/cityController.js"></script>
+  </body>
 </html>

@@ -1,6 +1,6 @@
 ;(function() {
-	'use strict';
+  'use strict';
 
-	// Init Angular Application
-	var app = angular.module('myApp', []);
+  // Init Angular Application
+  var app = angular.module('myApp', []);
 }());
